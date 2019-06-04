@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import CompUno from './components/compuno';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+
+  constructor(){
+    super()
+      this.state ={
+        nombre :''
+      }
+  }
+
+  onChange(){
+
+  }
+
+  render(){
+    return(
+      <div>
+          <form action="">
+              <label htmlFor="nombre">Nombre</label>
+              <input  name="nombre" id="nombre"
+                      value={this.state.nombre}
+                      onChange={this.onChange.bind(this)} type="text"/>
+              <CompUno/>
+
+          </form>
+      </div>
+    );
+  }
 }
 
 export default App;
